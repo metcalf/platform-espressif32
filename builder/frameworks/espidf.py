@@ -543,9 +543,10 @@ def generate_project_ld_script(sdk_config, ignore_targets=None):
         os.path.join(
             FRAMEWORK_DIR,
             "components",
-            idf_variant,
+            "esp_system",
             "ld",
-            "%s.project.ld.in" % idf_variant,
+            idf_variant,
+            "sections.ld.in",
         ),
         env.VerboseAction(cmd, "Generating project linker script $TARGET"),
     )
